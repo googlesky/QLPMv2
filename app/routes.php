@@ -18,5 +18,11 @@ Route::get('/', function()
 
 Route::get('login.app', function()
 {
+	$results = DB::select('select * from NGUOIDUNG where USERNAME = ?',array('lphieu'));
+	var_dump($results);
 	return View::make('login');
+});
+
+Route::match(array('GET', 'POST'),'take_login.app',function(){
+
 });

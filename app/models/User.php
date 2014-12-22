@@ -7,5 +7,5 @@
  */
 
 class User extends Eloquent {
-    public $table = 'NGUOIDUNG';
+    protected $table = 'NGUOIDUNG';
 }
