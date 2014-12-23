@@ -70,26 +70,12 @@
 		 * 
 		 */
 		
-		// phương thức lấy thông tin phòng
-		public function getPHONG()
-		{
-			
-		}
-
-		// phương thức lấy thông tin máy tính
-		public function getMAYTINH()
-		{
-			
-		}
-
-		// phương thức lấy thông tin chức vụ
-		public function getCHUCVU()
-		{
-			
-		}
-
-		// phương thức lấy thông tin ip
-		public function getIP()
+		/**
+		 * [getNGUOIDUNG lấy thông tin từ USERNAME]
+		 * @param  string $USERNAME 
+		 * @return [type]           [description]
+		 */
+		function getNGUOIDUNG($USERNAME)
 		{
 			
 		}
