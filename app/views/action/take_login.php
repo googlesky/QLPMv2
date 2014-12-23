@@ -12,6 +12,8 @@ $check = $nd->CheckLogin($USERNAME,$PASSWORD);
 
 if($check==1){
     echo 'Đăng Nhập thành công!';
+    Session::set('USERNAME',$USERNAME);
+    Session::set('PASSWORD',$PASSWORD);
 }elseif($check==-1){
     echo 'Không tồn tại username này';
 }else{

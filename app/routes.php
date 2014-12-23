@@ -15,6 +15,8 @@ Route::get('/', function () {
     return View::make('login');
 });
 
+/*Code route của trang login*/
+
 Route::get('login.app', function () {
     return View::make('login');
 });
@@ -28,8 +30,23 @@ Route::post('take_login.app', function () {
     ));
 });
 
+/*LogOut*/
+
+Route::get('logout.app',function(){
+    return View::make('action.take_logout');
+});
+
+/*Code cho trang admin CP*/
+
+Route::get('admincp.app',function(){
+    return 'this is admin cp';
+});
+
+/*Other Code*/
+
 Route::get('test.app', function () {
     $temp = DB::table('NGUOIDUNG')->where('USERNAME', 'lphieu')->first();
     echo $temp->ID;
 //    var_dump($temp);
 });
+

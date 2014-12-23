@@ -117,6 +117,12 @@ class NGUOIDUNG
             }
         }
     }
+
+    function LogOut(){
+//        echo Form::label('ThongBao','Bạn đã logout thành công!');
+        Session::flush();
+        echo View::make('login');
+    }
 }
 
 ?>

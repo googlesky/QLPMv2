@@ -1,4 +1,4 @@
-@extends('header')
+@extends('headerlogin')
 
 @section('title')
 Đăng Nhập
@@ -15,7 +15,7 @@
                     <input type="text" id="username" placeholder="Nhập tên đăng nhập" class="form-control" required autofocus>
                     <input type="password" id="password" placeholder="Nhập mật khẩu" class="form-control" required>
                     <div class="checkbox">
-                        <input type="checkbox">Nhớ mật khẩu
+                        <input id="rememberme" name="rememberme" type="checkbox">Nhớ mật khẩu
                     </div>
                     <button id="btnDangNhap" class="btn btn-lg btn-success btn-block" type="button" onclick="login_submit()">Đăng nhập</button>
                 </div>
