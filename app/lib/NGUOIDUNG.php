@@ -96,7 +96,7 @@ class NGUOIDUNG
     function SaveNew()
     {
         DB::table('NGUOIDUNG')->insert(array(
-            'ID' => $this->id,
+            'ID' => $this->ID,
             'MA_CVU' => $this->MA_CVU,
             'USERNAME' => $this->USERNAME,
             'PASSWORD' => $this->PASSWORD,
