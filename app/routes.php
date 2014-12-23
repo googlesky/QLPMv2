@@ -19,11 +19,17 @@ Route::get('login.app', function () {
     return View::make('login');
 });
 
-Route::match(array('GET', 'POST'), 'take_login.app', function () {
-    return View::make('run.take_login');
+Route::post('take_login.app', function () {
+    $ipall = Input::all();
+//    var_dump($ipall);
+    return View::make('action.take_login', array(
+        'USERNAME' => $ipall['USERNAME'],
+        'PASSWORD' => $ipall['PASSWORD']
+    ));
 });
 
 Route::get('test.app', function () {
-    $temp = DB::table('NGUOIDUNG')->where('USERNAME', 'pvnhanh')->first();
-    var_dump($temp);
+    $temp = DB::table('NGUOIDUNG')->where('USERNAME', 'lphieu')->first();
+    echo $temp->ID;
+//    var_dump($temp);
 });

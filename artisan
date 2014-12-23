@@ -22,7 +22,7 @@ require __DIR__.'/bootstrap/autoload.php';
 |
 | We need to illuminate PHP development, so let's turn on the lights.
 | This bootstraps the framework and gets it ready for and then it
-| will load up this application so that we can run it and send
+| will load up this application so that we can action it and send
 | the responses back to the browser and delight these users.
 |
 */
@@ -34,7 +34,7 @@ $app = require_once __DIR__.'/bootstrap/start.php';
 | Load The Artisan Console Application
 |--------------------------------------------------------------------------
 |
-| We'll need to run the script to load and return the Artisan console
+| We'll need to action the script to load and return the Artisan console
 | application. We keep this in its own script so that we will load
 | the console application independent of running commands which
 | will allow us to fire commands from Routes when we want to.
@@ -50,7 +50,7 @@ $artisan = Illuminate\Console\Application::start($app);
 | Run The Artisan Application
 |--------------------------------------------------------------------------
 |
-| When we run the console application, the current CLI command will be
+| When we action the console application, the current CLI command will be
 | executed in this console and the response sent back to a terminal
 | or another output device for the developers. Here goes nothing!
 |

@@ -90,9 +90,9 @@ return array(
 	| Migration Repository Table
 	|--------------------------------------------------------------------------
 	|
-	| This table keeps track of all the migrations that have already run for
+	| This table keeps track of all the migrations that have already action for
 	| your application. Using this information, we can determine which of
-	| the migrations on disk haven't actually been run in the database.
+	| the migrations on disk haven't actually been action in the database.
 	|
 	*/
 

@@ -6,6 +6,7 @@
     <script type="text/javascript" src="{{asset('assets/js/jquery/jquery-1.11.2.min.js')}}"></script>
     <script type="text/javascript" src="{{asset('assets/js/jquery/jquery.validate.min.js')}}"></script>
     <script type="text/javascript" src="{{asset('assets/js/jquery/additional-methods.min.js')}}"></script>
+    <script type="text/javascript" src="{{asset('assets/js/bootstrap.js')}}"></script>
 </head>
 <body>
 <div class="container">

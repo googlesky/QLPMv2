@@ -5,6 +5,7 @@
 @endsection
 
 @section('noidung')
+
 <div class="container">
     <div class="row">
         <div class="col-md-4"></div>
@@ -22,13 +23,17 @@
         <div class="col-md-4"></div>
     </div>
 </div>
+
 <script>
 function login_submit(){
     $.ajax({
         url: 'take_login.app',
         type: 'POST',
-        data: {username: $('#username').val(), password: $('#password').val()}
+        data: {USERNAME: $('#username').val(), PASSWORD: $('#password').val()}
     },"json")
+    .done(function(msg){
+        alert(msg);
+    })
 }
 </script>
 @endsection

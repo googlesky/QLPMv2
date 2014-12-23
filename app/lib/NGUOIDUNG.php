@@ -8,7 +8,7 @@ class NGUOIDUNG
     /**
      * @var int
      */
-    public $id = 0;
+    public $ID = 0;
     public $USERNAME = '';
     public $PASSWORD = '';
     public $TEN_ND = '';
@@ -21,9 +21,9 @@ class NGUOIDUNG
      * @param string $PASSWORD
      * @param string $TEN_ND
      */
-    function __construct($MA_ND, $USERNAME, $PASSWORD, $TEN_ND)
+    function __construct($ID, $USERNAME, $PASSWORD, $TEN_ND)
     {
-        $this->MA_ND = $MA_ND;
+        $this->MA_ND = $ID;
         $this->USERNAME = $USERNAME;
         $this->PASSWORD = $PASSWORD;
         $this->TEN_ND = $TEN_ND;
@@ -106,11 +106,11 @@ class NGUOIDUNG
 
     /*Check password và username có đúng ko!*/
     function CheckLogin($username,$password){
-        $user = db::table('NGUOIDUNG')->where('USERNAME',$username);
+        $user = DB::table('NGUOIDUNG')->where('USERNAME',$username)->first();
         if(is_null($user)){
             return -1;
         }else{
-            if($password==$user['PASSWORD']){
+            if($password==$user->PASSWORD){
                 return 1;
             }else{
                 return 0;

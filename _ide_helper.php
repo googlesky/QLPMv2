@@ -3090,7 +3090,7 @@ namespace {
         }
         
         /**
-         * Execute the given callback in "dry run" mode.
+         * Execute the given callback in "dry action" mode.
          *
          * @param \Closure $callback
          * @return array 
@@ -3393,7 +3393,7 @@ namespace {
         }
         
         /**
-         * Determine if the connection in a "dry run".
+         * Determine if the connection in a "dry action".
          *
          * @return bool 
          * @static 
