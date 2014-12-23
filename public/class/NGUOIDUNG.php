@@ -8,10 +8,11 @@ class NGUOIDUNG
     /**
      * @var int
      */
-    public $MA_ND = 0;
+    public $id = 0;
     public $USERNAME = '';
     public $PASSWORD = '';
     public $TEN_ND = '';
+    public $MA_CVU;
 
     /**
      * [__construct hàm khởi dựng với 4 tham số]
@@ -89,6 +90,21 @@ class NGUOIDUNG
     {
         return DB::table('CHUCVU')->where('MA_VCU', '=', $this->MA_CVU);
     }
+
+
+    /*Tạo người dùng mới trong database*/
+    function SaveNew()
+    {
+        DB::table('NGUOIDUNG')->insert(array(
+            'ID' => $this->id,
+            'MA_CVU' => $this->MA_CVU,
+            'USERNAME' => $this->USERNAME,
+            'PASSWORD' => $this->PASSWORD,
+            'TEN_ND' => $this->TEN_ND
+        ));
+    }
+
+    /**/
 }
 
 ?>

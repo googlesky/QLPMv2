@@ -11,16 +11,19 @@
 |
 */
 
-Route::get('/', function()
-{
-	return View::make('login');
+Route::get('/', function () {
+    return View::make('login');
 });
 
-Route::get('login.app', function()
-{
-	return View::make('login');
+Route::get('login.app', function () {
+    return View::make('login');
 });
 
-Route::match(array('GET', 'POST'),'take_login.app',function(){
-	
+Route::match(array('GET', 'POST'), 'take_login.app', function () {
+    return View::make('run.take_login');
+});
+
+Route::get('test.app', function () {
+    $temp = DB::table('NGUOIDUNG')->where('USERNAME', 'pvnhanh')->first();
+    var_dump($temp);
 });
