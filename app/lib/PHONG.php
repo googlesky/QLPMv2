@@ -32,10 +32,10 @@
 		function get_MAYTINH(){
 
 		}
-		/*Tạo người dùng mới trong database*/
+		/*Tạo phòng mới trong database*/
 	    function SaveNew()
 	    {
-	        DB::table('NGUOIDUNG')->insert(array(
+	        DB::table('PHONG')->insert(array(
 	            'MA_PHONG' => $this->MA_PHONG,
 	            'TEN_PHONG' => $this->TEN_PHONG,
 	            'SLUONG_MAY' => $this->SLUONG_MAY
