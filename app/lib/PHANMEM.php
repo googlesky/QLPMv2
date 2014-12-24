@@ -30,5 +30,14 @@
 		{
 			# code...
 		}
+		/*Tạo phần mềm mới trong database*/
+	    function SaveNew()
+	    {
+	        DB::table('PHANMEM')->insert(array(
+	            'MA_PM' => $this->MA_PM,
+	            'TEN_PM' => $this->TEN_PM,
+	            'PHIENBAN_PM' => $this->PHIENBAN_PM
+	        ));
+	    }
 	}
 ?>
