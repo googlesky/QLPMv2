@@ -32,5 +32,15 @@
 		{
 			# code...
 		}
+		/*Tạo máy tính mới trong database*/
+	    function SaveNew()
+	    {
+	        DB::table('MAYTINH')->insert(array(
+	            'MA_MT' => $this->MA_MT,
+	            'TEN_MT' => $this->MA_MT,
+	            'NGAYCHUYEN' => $this->NGAYCHUYEN,
+	            'GHICHU_NGCHUYENMAY' => $this->GHICHU_NGCHUYENMAY
+	        ));
+    	}
 	}
 ?>
