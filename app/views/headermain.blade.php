@@ -24,5 +24,7 @@
 </head>
 
 <body>
+@extends('menuheader')
+{{--Kế thừ menu header--}}
 @yield('NoiDung')
 </body>

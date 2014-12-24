@@ -39,7 +39,7 @@ Route::get('logout.app',function(){
 /*Code cho trang admin CP*/
 
 Route::get('admincp.app',function(){
-    return 'this is admin cp';
+    return View::make('admin');
 });
 
 /*Other Code*/
