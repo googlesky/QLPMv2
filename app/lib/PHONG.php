@@ -13,6 +13,9 @@
 			$this->TEN_PHONG=$MA_PHONG;
 			$this->SLUONG_MAY=$SLUONG_MAY;
 		}
+		/**
+		 * Phương thức
+		 */
 		//Hàm chuyển máy theo đơn vị
 		function get_DONVI(){
 
@@ -29,5 +32,14 @@
 		function get_MAYTINH(){
 
 		}
+		/*Tạo người dùng mới trong database*/
+	    function SaveNew()
+	    {
+	        DB::table('NGUOIDUNG')->insert(array(
+	            'MA_PHONG' => $this->MA_PHONG,
+	            'TEN_PHONG' => $this->TEN_PHONG,
+	            'SLUONG_MAY' => $this->SLUONG_MAY
+	        ));
+	    }
 	}
 ?>
