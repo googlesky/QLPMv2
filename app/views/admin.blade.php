@@ -198,7 +198,7 @@
                             </div>
                             <div class="panel-body">
                                 <ul class="timeline">
-                                    @extends('Templates.admin.lichlamviec')
+                                    @include('Templates.admin.lichlamviec')
                                 </ul>
                             </div>
                         </div>
@@ -213,7 +213,7 @@
                                 <div class="panel-collapse collapse in">
                                     <div class="panel-body">
                                         <ul class="list-group table-hover">
-                                            @extends('Templates.admin.DangNhapGanDay')
+                                            @include('Templates.admin.DangNhapGanDay')
                                         </ul>
                                     </div>
                                 </div>

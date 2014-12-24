@@ -4,7 +4,7 @@
     <div class="row">
         <div class="col-md-12">
             <div class="img-circle" id="avatar">
-                <img alt="My Avatar" src="images/avatar.jpg" class="center-block img-circle img-responsive">
+                <img alt="My Avatar" src="{{asset('assets/images/avatar.jpg')}}" class="center-block img-circle img-responsive">
             </div>
             <p>
             <h1 class="text-center" style="color: #878787;">{{Session::get('USERNAME')}}</h1>
