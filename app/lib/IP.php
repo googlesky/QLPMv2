@@ -29,5 +29,14 @@
 		{
 			# code...
 		}
+		 /*Tạo IP mới trong database*/
+	    function SaveNew()
+	    {
+	        DB::table('IP')->insert(array(
+	            'STT_IP' => $this->STT_IP,
+	            'IP' => $this->IP,
+	            'THOIGIAN_DN' => $this->THOIGIAN_DN
+	        ));
+	    }
 	}
 ?>
