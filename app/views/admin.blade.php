@@ -2,21 +2,21 @@
 
 @section('title')
     Administrator CP
-@endsection
+@stop
 
 @section('customJS')
-@endsection
+@stop
 
 @section('customCSS')
-@endsection
+    <link rel="stylesheet" href="{{asset('assets/css/admin.css')}}">
+@stop
 
-@section('noidung')
-
-
+@section('NoiDung')
+    @include('menuheader')
     <div class="container-fluid" id="main_content">
-
+        @include('sidebar')
         <div class="row">
-            {{--@extends('sidebar') --}}{{--Kế thừa sidebar--}}
+
             <div class="col-md-10 col-md-offset-2" id="main_primary">
 
                 <div class="row">
@@ -246,4 +246,4 @@
         $('#menu').metisMenu();
         $(".alert").alert();
     </script>
-@endsection
+@stop
