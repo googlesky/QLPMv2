@@ -23,7 +23,7 @@ class NGUOIDUNG
      */
     function __construct($ID, $USERNAME, $PASSWORD, $TEN_ND)
     {
-        $this->MA_ND = $ID;
+        $this->ID = $ID;
         $this->USERNAME = $USERNAME;
         $this->PASSWORD = $PASSWORD;
         $this->TEN_ND = $TEN_ND;
@@ -122,6 +122,7 @@ class NGUOIDUNG
 //        echo Form::label('ThongBao','Bạn đã logout thành công!');
         Session::flush();
         echo View::make('login');
+
     }
 }
 
