@@ -35,5 +35,16 @@
 		{
 			# code...
 		}
+		/*Tạo phần cứng mới trong database*/
+	    function SaveNew()
+	    {
+	        DB::table('PHANCUNG')->insert(array(
+	            'MA_PHANCUNG' => $this->MA_PHANCUNG,
+	            'TEN_PHANCUNG' => $this->TEN_PHANCUNG,
+	            'HANG_SX_PHANCUNG' => $this->HANG_SX_PHANCUNG,
+	            'DONVITINH' => $this->DONVITINH,
+	            'GIATHANH_1PHANCUNG' => $this->GIATHANH_1PHANCUNG
+	        ));
+	    }
 	}
 ?>
