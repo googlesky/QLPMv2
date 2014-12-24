@@ -1,6 +1,6 @@
 <?php
 	/**
-	* 
+	* khai báo đối tượng
 	*/
 	class THIETBI
 	{
@@ -19,5 +19,20 @@
 			$this->LOAI_TB=$LOAI_TB;
 			$this->GIATHANH_1TB=$GIATHANH_1TB;
 		}
+		/**
+		 * Phương Thức
+		 */
+		/*Tạo Thiết bị mới trong database*/
+	    function SaveNew()
+	    {
+	        DB::table('THIETBI')->insert(array(
+	            'MA_TB' => $this->MA_TB,
+	            'TEN_TB' => $this->TEN_TB,
+	            'SLUONG_TB' => $this->SLUONG_TB,
+	            'DONVIDO_TB' => $this->DONVIDO_TB,
+	            'LOAI_TB' => $this->LOAI_TB,
+	            'GIATHANH_1TB' => $this->GIATHANH_1TB
+	        ));
+	    }
 	}
 ?>
