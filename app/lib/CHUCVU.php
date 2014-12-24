@@ -11,6 +11,10 @@
 			$this->MA_CVU=$MA_CVU;
 			$this->TEN_CVU=$TEN_CVU;
 		}
+		public function getTHONGTIN_CHUCVU($MA_PHANCUNG)
+		{
+			# code...
+		}
 		/*tạo mới chức vụ trong DB*/
 		function SaveNew()
 	    {
