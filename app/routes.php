@@ -32,13 +32,13 @@ Route::post('take_login.app', function () {
 
 /*LogOut*/
 
-Route::get('logout.app',function(){
+Route::get('logout.app', function () {
     return View::make('action.take_logout');
 });
 
 /*Code cho trang admin CP*/
 
-Route::get('admincp.app',function(){
+Route::get('admincp.app', function () {
     return View::make('admin');
 });
 

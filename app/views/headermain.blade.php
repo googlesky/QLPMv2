@@ -23,6 +23,6 @@
 <body>
 @section('NoiDung')
     Đây là phần nội dung
-    @show
+@show
 </body>
 </html>
