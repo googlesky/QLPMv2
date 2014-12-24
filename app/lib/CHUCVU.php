@@ -16,7 +16,7 @@
 	    {
 	        DB::table('CHUCVU')->insert(array(
 	            'MA_CVU' => $this->MA_CVU,
-	            'TEN_CVU' => $this->TEN_ND
+	            'TEN_CVU' => $this->TEN_CVU
 	        ));
 	    }
 	}
