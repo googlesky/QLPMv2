@@ -42,6 +42,13 @@ Route::get('admincp.app', function () {
     return View::make('admin');
 });
 
+
+/*Code cho trang Phong*/
+
+Route::get('phong.app',function(){
+    return View::make('phong');
+});
+
 /*Other Code*/
 
 Route::get('test.app', function () {
