@@ -1,7 +1,7 @@
 <?php
 /**
  * An helper file for Laravel 4, to provide autocomplete information to your IDE
- * Generated for Laravel 4.2.12 on 2014-12-22.
+ * Generated for Laravel 4.2.16 on 2014-12-25.
  *
  * @author Barry vd. Heuvel <barryvdh@gmail.com>
  * @see https://github.com/barryvdh/laravel-ide-helper
@@ -3090,7 +3090,7 @@ namespace {
         }
         
         /**
-         * Execute the given callback in "dry action" mode.
+         * Execute the given callback in "dry run" mode.
          *
          * @param \Closure $callback
          * @return array 
@@ -3106,7 +3106,7 @@ namespace {
          *
          * @param string $query
          * @param array $bindings
-         * @param $time
+         * @param float|null $time
          * @return void 
          * @static 
          */
@@ -3393,7 +3393,7 @@ namespace {
         }
         
         /**
-         * Determine if the connection in a "dry action".
+         * Determine if the connection in a "dry run".
          *
          * @return bool 
          * @static 
@@ -3718,12 +3718,25 @@ namespace {
          * @param string $operator
          * @param int $count
          * @param string $boolean
-         * @param \Closure $callback
+         * @param \Closure|null $callback
          * @return \Illuminate\Database\Eloquent\Builder|static 
          * @static 
          */
         public static function has($relation, $operator = '>=', $count = 1, $boolean = 'and', $callback = null){
             return \Illuminate\Database\Eloquent\Builder::has($relation, $operator, $count, $boolean, $callback);
+        }
+        
+        /**
+         * Add a relationship count condition to the query.
+         *
+         * @param string $relation
+         * @param string $boolean
+         * @param \Closure|null $callback
+         * @return \Illuminate\Database\Eloquent\Builder|static 
+         * @static 
+         */
+        public static function doesntHave($relation, $boolean = 'and', $callback = null){
+            return \Illuminate\Database\Eloquent\Builder::doesntHave($relation, $boolean, $callback);
         }
         
         /**
@@ -3738,6 +3751,18 @@ namespace {
          */
         public static function whereHas($relation, $callback, $operator = '>=', $count = 1){
             return \Illuminate\Database\Eloquent\Builder::whereHas($relation, $callback, $operator, $count);
+        }
+        
+        /**
+         * Add a relationship count condition to the query with where clauses.
+         *
+         * @param string $relation
+         * @param \Closure|null $callback
+         * @return \Illuminate\Database\Eloquent\Builder|static 
+         * @static 
+         */
+        public static function whereDoesntHave($relation, $callback = null){
+            return \Illuminate\Database\Eloquent\Builder::whereDoesntHave($relation, $callback);
         }
         
         /**
@@ -4297,6 +4322,7 @@ namespace {
         /**
          * Add a "group by" clause to the query.
          *
+         * @param array|string $column,...
          * @return $this 
          * @static 
          */
@@ -4854,6 +4880,16 @@ namespace {
             return \Illuminate\Database\Query\Builder::getGrammar();
         }
         
+        /**
+         * Use the write pdo for query.
+         *
+         * @return $this 
+         * @static 
+         */
+        public static function useWritePdo(){
+            return \Illuminate\Database\Query\Builder::useWritePdo();
+        }
+        
     }
 
 
@@ -5126,6 +5162,17 @@ namespace {
          */
         public static function copy($path, $target){
             return \Illuminate\Filesystem\Filesystem::copy($path, $target);
+        }
+        
+        /**
+         * Extract the file name from a file path.
+         *
+         * @param string $path
+         * @return string 
+         * @static 
+         */
+        public static function name($path){
+            return \Illuminate\Filesystem\Filesystem::name($path);
         }
         
         /**
@@ -5767,6 +5814,17 @@ namespace {
          */
         public static function needsRehash($hashedValue, $options = array()){
             return \Illuminate\Hashing\BcryptHasher::needsRehash($hashedValue, $options);
+        }
+        
+        /**
+         * Set the default crypt cost factor.
+         *
+         * @param int $rounds
+         * @return void 
+         * @static 
+         */
+        public static function setRounds($rounds){
+            \Illuminate\Hashing\BcryptHasher::setRounds($rounds);
         }
         
     }
