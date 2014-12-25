@@ -8,72 +8,13 @@
             <thead>
             <tr>
                 <td>Số thứ tự</td>
-                <td>Tên phòng</td>
-                <td>Chú thích</td>
+                <td>Mã Phòng</td>
+                <td>Tên Phòng</td>
                 <td>Số máy tính</td>
             </tr>
             </thead>
             <tbody>
-            <?php
-            $res = DB::table('PHONG')
-            $i = 1;
-            if (mysql_num_rows($res) > 0) {
-                while ($arr = mysql_fetch_assoc($res)) {
-                    echo("
-                        <tr>
-                            <td id=\"$arr[autonum]\" name=\"$arr[autonum]\">" . $i++ . "</td>
-                            <td id=\"$arr[tenphong]\" name=\"$arr[tenphong]\">$arr[tenphong]</td>
-                            <td id=\"$arr[tenphong]\" name=\"$arr[tenphong]\">$arr[chuthich]</td>
-                            <td id=\"$arr[tenphong]\" name=\"$arr[tenphong]\">$arr[somay]</td>");
-                    if ($classuser == 100) {
-                        echo("<td><button class=\"btn btn-primary btn-sm\" data-toggle=\"modal\" data-target=\"#edit" . ($i - 1) . "\">Sửa</button>");
-                    }
-                    echo("<div class=\"modal fade\" id=\"edit" . ($i - 1) . "\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"myModalLabel\" aria-hidden=\"true\">
-                              <div class=\"modal-dialog\">
-                                <div class=\"modal-content\">
-                                <form action=\"\">
-                                  <div class=\"modal-header\">
-                                    <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-hidden=\"true\">&times;</button>
-                                    <h4 class=\"modal-title\" id=\"myModalLabel\">Chỉnh sửa</h4>
-                                  </div>
-                                  <div class=\"modal-body\">
-                                  <div class=\"row\">
-                                    <div class=\"col-md-12\" id=\"e-$arr[autonum]\" name=\"e-$arr[autonum]\" >
-
-                                      <div class=\"form-group\">
-                                        <label for=\"\">Số thứ tự</label>
-                                        <input type=\"text\" class=\"form-control\" value=\"" . ($i - 1) . "\" disabled>
-                                      </div>
-                                      <div class=\"form-group\">
-                                        <label for=\"\">Tên phòng</label>
-                                        <input id=\"e1-$arr[autonum]\" type=\"text\" class=\"form-control\" value=\"" . $arr['tenphong'] . "\">
-                                      </div>
-                                      <div class=\"form-group\">
-                                        <label for=\"\">Chú thích</label>
-                                        <input id=\"e2-$arr[autonum]\" type=\"text\" class=\"form-control\" value=\"" . $arr['chuthich'] . "\">
-                                      </div>
-                                      <div class=\"form-group\">
-                                        <label for=\"\">Số máy tính</label>
-                                        <input id=\"e3-$arr[autonum]\" type=\"text\" class=\"form-control\" value=\"" . $arr['somay'] . "\">
-                                      </div>
-
-                                    </div>
-                                  </div><!-- End row -->
-                                  </div>
-                                  <div class=\"modal-footer\">
-                                    <button type=\"button\" class=\"btn btn-default\" data-dismiss=\"modal\">Hủy bỏ</button>
-                                    <button id=\"b-$arr[autonum]\" onclick=\"updatephong((this).id)\" type=\"button\" class=\"btn btn-primary\" >Lưu thay đổi</button>
-                                  </div>
-                                  </form>
-                                </div>
-                              </div>
-                            </div>
-                            </td>
-                        </tr>");
-
-                }
-            }
-            ?>
+                @include('Templates.phong.ListPhong_InListPhong')
             </tbody>
         </table>
 
