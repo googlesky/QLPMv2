@@ -44,6 +44,11 @@
                     </div>
                 </div><!-- End .row -->
                 
+                <div class="row space">
+                    <div class="container-fluid">
+                        @include('Templates.maytinh.ChonPhong')
+                    </div><!-- End .container-fluid -->
+                </div><!-- End .row space -->
 
             </div>
             <!-- End .col-md-10 -->
