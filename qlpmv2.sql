@@ -2,15 +2,15 @@
 Navicat MySQL Data Transfer
 
 Source Server         : Ampps
-Source Server Version : 50620
+Source Server Version : 50622
 Source Host           : 127.0.0.1:3306
 Source Database       : QLPMv2
 
 Target Server Type    : MYSQL
-Target Server Version : 50620
+Target Server Version : 50622
 File Encoding         : 65001
 
-Date: 2014-12-25 01:41:34
+Date: 2014-12-26 01:57:28
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -333,6 +333,13 @@ CREATE TABLE `PHONG` (
 -- ----------------------------
 -- Records of PHONG
 -- ----------------------------
+INSERT INTO `PHONG` VALUES ('THQL_P01', 'Phòng Thực Hành 1', '50');
+INSERT INTO `PHONG` VALUES ('THQL_P02', 'Phòng Thực Hành 2', '50');
+INSERT INTO `PHONG` VALUES ('THQL_P03', 'Phòng Thực Hành 3', '50');
+INSERT INTO `PHONG` VALUES ('THQL_P04', 'Phòng Thực Hành 4', '50');
+INSERT INTO `PHONG` VALUES ('THQL_P05', 'Phòng Thực Hành 5', '50');
+INSERT INTO `PHONG` VALUES ('THQL_P06', 'Phòng Thực Hành 6', '50');
+INSERT INTO `PHONG` VALUES ('THQL_P07', 'Phòng Thực Hành 7', '50');
 
 -- ----------------------------
 -- Table structure for QUANLY

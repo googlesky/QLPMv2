@@ -13,6 +13,7 @@
     <script src="{{asset('assets/js/jquery/jquery-1.11.2.min.js')}}"></script>
     <script src="{{asset('assets/js/jquery/jquery.validate.min.js')}}"></script>
     <script src="{{asset('assets/js/jquery/additional-methods.min.js')}}"></script>
+    <script src="{{asset('assets/js/jquery/jquery.metisMenu.js')}}"></script>
     <script src="{{asset('assets/js/bootstrap.js')}}"></script>
     <script src="{{asset('assets/js/bootstrap-select.min.js')}}"></script>
     <script src="{{asset('assets/js/messi.js')}}"></script>

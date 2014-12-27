@@ -4,13 +4,13 @@
 	*/
 	class PHONG
 	{
-		var $MA_PHONG='';
-		var $TEN_PHONG='';
-		var $SLUONG_MAY='';
+		public $MA_PHONG='';
+		public $TEN_PHONG='';
+		public $SLUONG_MAY=0;
 		function __construct($MA_PHONG,$TEN_PHONG,$SLUONG_MAY)
 		{
 			$this->MA_PHONG=$MA_PHONG;
-			$this->TEN_PHONG=$MA_PHONG;
+			$this->TEN_PHONG=$TEN_PHONG;
 			$this->SLUONG_MAY=$SLUONG_MAY;
 		}
 		/**
@@ -32,6 +32,11 @@
 		function get_MAYTINH(){
 
 		}
+
+        function get_ListPhong(){
+
+        }
+
 		/*Tạo phòng mới trong database*/
 	    function SaveNew()
 	    {

@@ -25,15 +25,15 @@ return array(
     |
     */
     'properties' => array(
-        'creator'        => 'Maatwebsite',
-        'lastModifiedBy' => 'Maatwebsite',
+        'creator'        => 'Zcoder',
+        'lastModifiedBy' => 'Zcoder',
         'title'          => 'Spreadsheet',
         'description'    => 'Default spreadsheet export',
         'subject'        => 'Spreadsheet export',
         'keywords'       => 'maatwebsite, excel, export',
         'category'       => 'Excel',
-        'manager'        => 'Maatwebsite',
-        'company'        => 'Maatwebsite',
+        'manager'        => 'Zcode',
+        'company'        => 'CTEC - CTH12',
     ),
 
     /*
@@ -73,6 +73,6 @@ return array(
     |
     */
 
-    'creator'    => 'Maatwebsite',
+    'creator'    => 'Zcoder',
 
 );

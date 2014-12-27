@@ -42,11 +42,24 @@ Route::get('admincp.app', function () {
     return View::make('admin');
 });
 
+
+/*Code cho trang Phong*/
+
+Route::get('phong.app', function () {
+    return View::make('phong');
+});
+
 /*Other Code*/
 
 Route::get('test.app', function () {
-    $temp = DB::table('NGUOIDUNG')->where('USERNAME', 'lphieu')->first();
-    echo $temp->ID;
-//    var_dump($temp);
+//    $phongResults = DB::table('PHONG')->orderBy('MA_PHONG', 'asc')->get();
+//    $i = 0;
+//    foreach ($phongResults as $value) {
+//        var_dump($value);
+//        $phong[$i] = new PHONG($value->MA_PHONG, $value->TEN_PHONG, $value->SLUONG_MAY);
+//        echo $phong[$i]->MA_PHONG;
+//        echo '<br>';$i++;
+//    }
+    return View::make('Templates.phong.ListPhong_InListPhong');
 });
 
