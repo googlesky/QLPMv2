@@ -60,6 +60,6 @@ Route::get('test.app', function () {
 //        echo $phong[$i]->MA_PHONG;
 //        echo '<br>';$i++;
 //    }
-    return View::make('Templates.phong.ListPhong_InListPhong');
+//    return View::make('Templates.phong.ListPhong_InListPhong');
 });
 
