@@ -49,6 +49,12 @@ Route::get('phong.app', function () {
     return View::make('phong');
 });
 
+/*Code cho trang maytinh*/
+Route::get('maytinh.app', function ()
+{
+    return View::make('maytinh');
+});
+
 /*Other Code*/
 
 Route::get('test.app', function () {

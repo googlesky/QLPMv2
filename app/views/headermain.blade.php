@@ -10,6 +10,13 @@
     <link rel="stylesheet" href="{{asset('assets/css/bootstrap-select.min.css')}}">
     <link rel="stylesheet" href="{{asset('assets/css/messi.min.css')}}">
     <link rel="stylesheet" href="{{asset('assets/css/morris-0.4.3.min.css')}}">
+
+</head>
+
+<body>
+@section('NoiDung')
+    Đây là phần nội dung
+@show
     <script src="{{asset('assets/js/jquery/jquery-1.11.2.min.js')}}"></script>
     <script src="{{asset('assets/js/jquery/jquery.validate.min.js')}}"></script>
     <script src="{{asset('assets/js/jquery/additional-methods.min.js')}}"></script>
@@ -19,11 +26,18 @@
     <script src="{{asset('assets/js/messi.js')}}"></script>
     <script src="{{asset('assets/js/morris.min.js')}}"></script>
     <script src="{{asset('assets/js/raphael-min.js')}}"></script>
-</head>
-
-<body>
-@section('NoiDung')
-    Đây là phần nội dung
-@show
+    <script src="{{asset('assets/js/mindmup-editabletable.js')}}"></script>
+    <!-- <script src="js/holder.js"></script> -->
+<script type="text/javascript">
+    $('#menu1').metisMenu();
+    $(".alert").alert();
+</script>
+<script>
+    $('.selectpicker').selectpicker();
+    $('.selectpicker').selectpicker({
+        style: 'btn-info',
+        size: 4
+    });
+</script>
 </body>
 </html>
