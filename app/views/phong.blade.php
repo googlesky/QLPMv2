@@ -5,6 +5,8 @@
 @stop
 
 @section('NoiDung')
+    @include('menuheader')
+    @include('sidebar')
     <div class="col-md-10 col-md-offset-2" id="main_primary">
 
         <div class="row">
