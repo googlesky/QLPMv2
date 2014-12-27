@@ -46,9 +46,37 @@
                 
                 <div class="row space">
                     <div class="container-fluid">
+                    <!-- IMPORT PHẦN CHỌN PHÒNG -->
                         @include('Templates.maytinh.ChonPhong')
                     </div><!-- End .container-fluid -->
                 </div><!-- End .row space -->
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="container-fluid">
+
+                            <ul class="nav nav-tabs">
+                                <li class="active"><a href="#tab1" data-toggle="tab">Máy tính</a></li>
+                                <li><a href="#tab2" data-toggle="tab">Tình trạng</a></li>
+                                <li><a href="#tab3" data-toggle="tab">Phần mềm</a></li>
+                            </ul>
+
+                            @include('loadDataTheoPhong')
+
+                            <div class="tab-content">
+                                
+                                @include('tabMayTinh')
+
+                                @include('tabTinhTrang')
+
+                                @include('tabPhanMem')
+
+                            </div><!-- End .tab-content -->
+
+
+                        </div><!-- End .container-fluid -->
+                    </div><!-- End .col-md-12 -->
+                </div><!-- End .row -->
 
             </div>
             <!-- End .col-md-10 -->
