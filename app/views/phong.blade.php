@@ -6,6 +6,7 @@
 
 @section('NoiDung')
     @include('menuheader')
+    <div class="container-fluid" id="main_content">
     @include('sidebar')
     <div class="col-md-10 col-md-offset-2" id="main_primary">
 
@@ -44,16 +45,9 @@
             <div class="col-md-6">
                 @include('Templates.phong.ListPhong')
             </div>
-
-            <div class="col-md-6">
-                @include('Templates.phong.ListPhong')
-            </div>
         </div>
     </div> <!-- End .row tables -->
 
-    </div><!-- End .col-md-10 -->
-
-    </div>
 
     </div><!-- End .container-fluid -->
     <script type="text/javascript">
