@@ -59,15 +59,4 @@
     </div>
 
     </div><!-- End .container-fluid -->
-    <script type="text/javascript">
-        $('#menu1').metisMenu();
-        $(".alert").alert();
-    </script>
-    <script>
-        $('.selectpicker').selectpicker({
-            style: 'btn-info',
-            size: 4
-        });
-
-    </script>
 @stop
