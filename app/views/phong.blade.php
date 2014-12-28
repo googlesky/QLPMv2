@@ -4,6 +4,11 @@
     Quản lý Phòng Máy Tính
 @stop
 
+@section('customCSS')
+    <link rel="stylesheet" href="{{asset('assets/css/admin.css')}}">
+@stop
+
+
 @section('NoiDung')
     @include('menuheader')
     <div class="container-fluid" id="main_content">
@@ -48,6 +53,10 @@
         </div>
     </div> <!-- End .row tables -->
 
+
+    </div><!-- End .col-md-10 -->
+
+    </div>
 
     </div><!-- End .container-fluid -->
     <script type="text/javascript">
