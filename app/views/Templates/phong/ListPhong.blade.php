@@ -14,43 +14,24 @@
             </tr>
             </thead>
             <tbody>
-                @include('Templates.phong.ListPhong_InListPhong')
+            @include('Templates.phong.ListPhong_InListPhong')
             </tbody>
         </table>
 
     </div>
     <script>
-        var updatephong = function (data) {
-            $idphong = data.substring(2, data.length);
-            $tenphong = $("#e1-" + $idphong).val();
-            $chuthich = $("#e2-" + $idphong).val();
-            $somay = $("#e3-" + $idphong).val();
-            $.ajax({
-                type: "POST",
-                url: "addphong.php",
-                data: {
-                    type: 'updatephong',
-                    data: $idphong + ";" + $tenphong + ";" + $chuthich + ";" + $somay
-                }
-            }).done(function (msg) {
-                alert(msg);
-                location.reload();
-            })
-        }
+        /*Update phòng script */
     </script>
     <div class="panel-footer">
         <div class="row">
-            <div class="col-md-12"><?php
-                if ($classuser == 100) {
-                    echo('            <button class="btn btn-primary pull-right" data-toggle="modal" data-target="#myModal1">
-                Thêm phòng
-            </button>
-            <button class="btn btn-primary pull-right" data-toggle="modal" data-target="#myModal2" style="margin-right: 10px;">
-                Xóa phòng
-            </button>');
-                }
-                ?>
-
+            <div class="col-md-12">
+                <button class="btn btn-primary pull-right" data-toggle="modal" data-target="#myModal1">
+                    Thêm phòng
+                </button>
+                <button class="btn btn-primary pull-right" data-toggle="modal" data-target="#myModal2"
+                        style="margin-right: 10px;">
+                    Xóa phòng
+                </button>
             </div>
 
             <!-- Modal 1-->
@@ -104,19 +85,23 @@
                             <h4 class="modal-title" id="myModalLabel">Xóa phòng</h4>
                         </div>
                         <div class="modal-body">
-                            <?php
-                            echo("<div class=\"row\">");
-                            $res = sql_query("select * from qlphong");
-                            $i = 1;
-                            if (mysql_num_rows($res) > 0) {
-                                while ($arr = mysql_fetch_assoc($res)) {
-                                    echo("<div class=\"col-md-3\">
-                                    <div class=\"checkbox\" ><label><input type=\"checkbox\" id=\"id-$arr[autonum]\">Phòng " . $i++ . " - $arr[tenphong]</label></div>
+                            <div class="row">
+                                <?php
+                                $res = DB::table('PHONG')->get();
+                                $i = 1;
+
+                                foreach ($res as $arr){
+                                ?>
+                                <div class="col-md-3">
+                                    <div class="checkbox"><label><input type="checkbox"
+                                                                          id="id-{{$arr->MA_PHONG}}">
+                                            {{$arr->TEN_PHONG}}</label></div>
                                 </div>
-                                ");
+                                <?php
                                 }
-                            }
-                            echo("</div>"); ?>
+                                ?>
+                            </div>
+
                             <div class="row">
                                 <div class="col-md-12" id="numchecked" style="color: red">
                                     <script>
@@ -144,22 +129,6 @@
         </div>
     </div>
     <script>
-        var delphong = function () {
-            $("input:checked").each(function ($key, $element) {
-//                alert($($element).attr("id"));
-
-                $.ajax({
-                    type: "POST",
-                    url: "delphong.php",
-                    data: {type: "delphong", phongno: $($element).attr("id")}
-                })
-                        .done(function (msg) {
-                            //alert("Đã xoá phòng thứ "+$key+1+" được chọn!!!"+msg);
-                        });
-            });
-            alert("Đã xoá!!");
-            location.reload();
-        };
-        $("#xoaphong").click(delphong);
+        /*Del Phòng Script*/
     </script>
 </div>

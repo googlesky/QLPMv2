@@ -4,7 +4,15 @@
     Quản lý Phòng Máy Tính
 @stop
 
+@section('customCSS')
+    <link rel="stylesheet" href="{{asset('assets/css/admin.css')}}">
+@stop
+
+
 @section('NoiDung')
+    @include('menuheader')
+    <div class="container-fluid" id="main_content">
+    @include('sidebar')
     <div class="col-md-10 col-md-offset-2" id="main_primary">
 
         <div class="row">
@@ -42,27 +50,13 @@
             <div class="col-md-6">
                 @include('Templates.phong.ListPhong')
             </div>
-
-            <div class="col-md-6">
-                @include('Templates.phong.ListPhong')
-            </div>
         </div>
     </div> <!-- End .row tables -->
+
 
     </div><!-- End .col-md-10 -->
 
     </div>
 
     </div><!-- End .container-fluid -->
-    <script type="text/javascript">
-        $('#menu1').metisMenu();
-        $(".alert").alert();
-    </script>
-    <script>
-        $('.selectpicker').selectpicker({
-            style: 'btn-info',
-            size: 4
-        });
-
-    </script>
 @stop
