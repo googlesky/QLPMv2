@@ -92,75 +92,58 @@ PHANCONG.MA_PHONG ASC
                      aria-hidden="true">
                     <div class="modal-dialog">
                         <div class="modal-content">
-                            <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal"
-                                        aria-hidden="true">&times;</button>
-                                <h4 class="modal-title" id="myModalLabel">Thêm lịch</h4>
-                            </div>
-                            <div class="modal-body">
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <div class="form-group"><label for="">Giáo viên:</label><br><select
-                                                    id="tengiaovien" class="selectpicker">
-                                                <?php
-                                                //                                                $res = sql_query("select * from users");
-                                                //                                                if (mysql_num_rows($res) > 0) {
-                                                //                                                    while ($arr = mysql_fetch_assoc($res)) {
-                                                //                                                        echo("<option id=\"u-" . $arr['IDNUM'] . "\">" . $arr['USERNAME'] . "</option>");
-                                                //                                                    }
-                                                //                                                }
-                                                ?></select></div>
-                                        <div class="form-group"><label for="">Chọn Phòng: </label><br><select
-                                                    id="chonphong" class="selectpicker" data-live-search="true">
-                                                <?php
-                                                //                                                $res = sql_query("select * from qlphong");
-                                                //                                                $i = 1;
-                                                //                                                if (mysql_num_rows($res) > 0) {
-                                                //                                                    while ($arr = mysql_fetch_assoc($res)) {
-                                                //                                                        echo("<option id=\"p-$arr[autonum]\">Phòng " . $i++ . " - $arr[tenphong]</option>");
-                                                //                                                    }
-                                                //                                                }
-                                                ?></select></div>
-                                        <div class="form-group"><label for="">Ngày:</label><input id="ngaythanglich"
-                                                                                                  type="text"
-                                                                                                  class="form-control"
-                                                                                                  placeholder="Nhập Ngày dạng yyyy-mm-dd">
-                                        </div>
-                                        <div class="form-group"><label for="">Buổi:</label><br><select id="buoi"
-                                                                                                       class="selectpicker">
-                                                <option>Sáng</option>
-                                                <option>Chiều</option>
-                                            </select></div>
-                                        <div class="form-group"><label for="">Tiêu Đề: </label><input id="tieude"
-                                                                                                      type="text"
-                                                                                                      class="form-control"
-                                                                                                      placeholder="Nhập tiêu đề cho nội dung"><select
-                                                    id="cat" class="selectpicker">
-                                                <option>Dạy Học</option>
-                                                <option>Bảo Trì</option>
-                                                <option>Sự Cố</option>
-                                                <option>Khác</option>
-                                            </select></div>
-                                        <div class="form-group"><label for="">Nội dung:</label><textarea id="noidung"
-                                                                                                         cols="5"
-                                                                                                         rows="5"
-                                                                                                         class="form-control"
-                                                                                                         placeholder="Nhập nội dung vào đây"></textarea>
-                                        </div>
+                            <form>
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal"
+                                            aria-hidden="true">&times;</button>
+                                    <h4 class="modal-title" id="myModalLabel">Thêm lịch</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <?php
+                                            $resCV = DB::table("CONGVIEC")->get();
+                                            $CV = Array();
+                                            foreach ($resCV as $ArrayCV) {
+                                                array_push($CV, $ArrayCV->STT_CVIEC . " - " . $ArrayCV->NOIDUNG_CVIEC);
+                                            }
 
+                                            $resPHONG = DB::table("PHONG")->lists("MA_PHONG");
+
+                                            $ArrBuoiDay = array("Sáng", "Chiều");
+                                            ?>
+                                            {{ Form::label("Chọn Công Việc: " ) }}
+                                            {{ Form::select("Công Việc",$CV,"",array("class" =>"selectpicker","id"=>"select_congviec")) }}
+                                            <br>
+                                            {{ Form::label("Chọn Phòng: ") }}
+                                            {{ Form::select("Phòng",$resPHONG,"",array("class" =>"selectpicker","id"=>"seclect_phong")) }}
+                                            <br>
+                                            {{ Form::label("Chọn Ngày: ") }}
+                                            {{ Form::text('date', null, array('type' => 'text', 'class' => 'form-control datepicker','placeholder' => 'Pick the date this task should be completed', 'id' => 'calendar')) }}
+                                            <br>
+                                            {{ Form::label("Chọn Buổi: ") }}
+                                            {{ Form::select("Buổi",$ArrBuoiDay,"",array("class" =>"selectpicker","id"=>"seclect_buoi")) }}
+                                            <br>
+                                            {{ Form::label("Người Dạy: ") }}
+                                            {{ Form::text("Người Dạy","",array("class" => "input input-sm form-control","id"=>"txtNguoiDay")) }}
+                                            <?php
+
+                                            ?>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-default" data-dismiss="modal">Hủy bỏ</button>
-                                <button id="luulich" type="button" class="btn btn-primary">Lưu thay đổi</button>
-                            </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Hủy bỏ</button>
+                                    <button id="luulich" type="button" class="btn btn-primary">Lưu thay đổi</button>
+                                </div>
+                            </form>
                         </div>
+
                     </div>
                 </div>
                 <script>
                     $("#luulich").click(function () {
-                        //alert($("#tengiaovien").val());
+//alert($("#tengiaovien").val());
                         $.ajax({
                             type: "POST",
                             url: "addphong.php",

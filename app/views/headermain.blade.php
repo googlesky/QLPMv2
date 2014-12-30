@@ -9,12 +9,14 @@
     <link rel="stylesheet" href="{{asset('assets/css/bootstrap.css')}}">
     <link rel="stylesheet" href="{{asset('assets/css/bootstrap-select.min.css')}}">
     <link rel="stylesheet" href="{{asset('assets/css/messi.min.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/css/datepicker3.css')}}">
     <link rel="stylesheet" href="{{asset('assets/css/morris-0.4.3.min.css')}}">
     <script src="{{asset('assets/js/jquery/jquery-1.11.2.min.js')}}"></script>
     <script src="{{asset('assets/js/jquery/jquery.validate.min.js')}}"></script>
     <script src="{{asset('assets/js/jquery/additional-methods.min.js')}}"></script>
     <script src="{{asset('assets/js/jquery/jquery.metisMenu.js')}}"></script>
     <script src="{{asset('assets/js/bootstrap.js')}}"></script>
+    <script src="{{asset('assets/js/bootstrap-datepicker.js')}}"></script>
     <script src="{{asset('assets/js/bootstrap-select.min.js')}}"></script>
     <script src="{{asset('assets/js/messi.js')}}"></script>
     <script src="{{asset('assets/js/morris.min.js')}}"></script>
@@ -25,19 +27,26 @@
 <body>
 @section('NoiDung')
     Đây là phần nội dung
-@show
+    @show
 
-    <!-- <script src="js/holder.js"></script> -->
-<script type="text/javascript">
-    $('#menu1').metisMenu();
-    $(".alert").alert();
-</script>
-<script>
-    $('.selectpicker').selectpicker();
-    $('.selectpicker').selectpicker({
-        style: 'btn-info',
-        size: 4
-    });
-</script>
+            <!-- <script src="js/holder.js"></script> -->
+    <script type="text/javascript">
+        $('#menu1').metisMenu();
+        $(".alert").alert();
+    </script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#calendar').datepicker({});
+        });
+    </script>
+
+    <script>
+        $('.selectpicker').selectpicker();
+        $('.selectpicker').selectpicker({
+            style: 'btn-info',
+            size: 4
+        });
+    </script>
 </body>
 </html>
