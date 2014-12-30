@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50622
 File Encoding         : 65001
 
-Date: 2014-12-26 01:57:28
+Date: 2014-12-31 02:37:52
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -109,6 +109,11 @@ CREATE TABLE `CONGVIEC` (
 -- ----------------------------
 -- Records of CONGVIEC
 -- ----------------------------
+INSERT INTO `CONGVIEC` VALUES ('1', 'Dạy Học');
+INSERT INTO `CONGVIEC` VALUES ('2', 'Sửa Máy');
+INSERT INTO `CONGVIEC` VALUES ('3', 'Bảo Trì');
+INSERT INTO `CONGVIEC` VALUES ('4', 'Thi');
+INSERT INTO `CONGVIEC` VALUES ('5', 'Hợp Tác');
 
 -- ----------------------------
 -- Table structure for DANGNHAPBANG
@@ -269,13 +274,14 @@ INSERT INTO `NGUOIDUNG` VALUES ('2', '4', 'lhtanh', '12345', 'Lê Hoàng Tuấn 
 -- ----------------------------
 DROP TABLE IF EXISTS `PHANCONG`;
 CREATE TABLE `PHANCONG` (
+  `ID_CV` int(11) NOT NULL,
   `STT_CVIEC` int(11) NOT NULL,
   `MA_ND` int(11) NOT NULL,
   `MA_PHONG` char(10) COLLATE utf8_unicode_ci NOT NULL,
   `NGAYDAY` date NOT NULL,
   `BUOIDAY` char(50) COLLATE utf8_unicode_ci NOT NULL,
-  `NGUOIDAY` int(11) NOT NULL,
-  PRIMARY KEY (`STT_CVIEC`,`MA_ND`,`MA_PHONG`),
+  `NGUOIDAY` char(50) COLLATE utf8_unicode_ci NOT NULL,
+  PRIMARY KEY (`STT_CVIEC`,`MA_ND`,`MA_PHONG`,`ID_CV`),
   KEY `FK_PHANCONG2` (`MA_ND`),
   KEY `FK_PHANCONG3` (`MA_PHONG`),
   CONSTRAINT `FK_PHANCONG` FOREIGN KEY (`STT_CVIEC`) REFERENCES `CONGVIEC` (`STT_CVIEC`) ON UPDATE CASCADE,
@@ -286,6 +292,10 @@ CREATE TABLE `PHANCONG` (
 -- ----------------------------
 -- Records of PHANCONG
 -- ----------------------------
+INSERT INTO `PHANCONG` VALUES ('0', '1', '1', 'THQL_P01', '2014-12-30', 'Sáng', 'Hoa');
+INSERT INTO `PHANCONG` VALUES ('1', '1', '1', 'THQL_P01', '2014-12-30', 'Chiều', 'Hoa');
+INSERT INTO `PHANCONG` VALUES ('2', '1', '1', 'THQL_P02', '2014-12-30', 'Sáng', 'Hậu');
+INSERT INTO `PHANCONG` VALUES ('3', '1', '1', 'THQL_P02', '2014-12-30', 'Chiều', 'Hậu');
 
 -- ----------------------------
 -- Table structure for PHANCUNG
