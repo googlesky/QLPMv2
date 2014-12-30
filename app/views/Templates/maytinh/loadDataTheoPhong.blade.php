@@ -18,3 +18,6 @@
                     echo $messages;
                 }
 ?>
+<div class='alert alert-warning' style='margin-top: 10px;'>
+    <h2 class='text-center'>Vui lòng chọn Phòng</h2>
+</div>
