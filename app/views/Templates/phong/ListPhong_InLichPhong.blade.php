@@ -92,7 +92,7 @@ PHANCONG.MA_PHONG ASC
                      aria-hidden="true">
                     <div class="modal-dialog">
                         <div class="modal-content">
-                            <form>
+                            <form method="post" action="add_lich.app">
                                 <div class="modal-header">
                                     <button type="button" class="close" data-dismiss="modal"
                                             aria-hidden="true">&times;</button>
@@ -146,10 +146,14 @@ PHANCONG.MA_PHONG ASC
 //alert($("#tengiaovien").val());
                         $.ajax({
                             type: "POST",
-                            url: "addphong.php",
+                            url: "add_lich.app",
                             data: {
-                                type: 'luulich',
-                                data: $("#tengiaovien").children(":selected").attr("id") + ';' + $("#chonphong").children(":selected").attr("id") + ';' + $("#ngaythanglich").val() + ';' + $("#buoi").val() + ';' + $("#tieude").val() + ';' + $("#noidung").val() + ';' + $("#cat").val()
+                                congviec: $('.select_congviec').val(),
+                                phong: $('.seclect_phong').val(),
+                                ngayday: $('.calendar').val(),
+                                buoiday: $('.seclect_buoi').val(),
+                                nguoiday: $('.txtNguoiDay').val()
+
                             }
                         })
                                 .done(function (msg) {

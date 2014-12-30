@@ -49,6 +49,10 @@ Route::get('phong.app', function () {
     return View::make('phong');
 });
 
+Route::post('add_phong.app',function(){
+    return View::make('action.phong.add_lich',array(Input::all()));
+});
+
 /*Code cho trang maytinh*/
 Route::get('maytinh.app', function () {
     return View::make('maytinh');

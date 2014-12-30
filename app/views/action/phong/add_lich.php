@@ -5,3 +5,5 @@
  * Date: 31/12/14
  * Time: 04:05
  */
+
+var_dump(Input::all());
