@@ -50,8 +50,7 @@ Route::get('phong.app', function () {
 });
 
 /*Code cho trang maytinh*/
-Route::get('maytinh.app', function ()
-{
+Route::get('maytinh.app', function () {
     return View::make('maytinh');
 });
 
@@ -66,6 +65,26 @@ Route::get('test.app', function () {
 //        echo $phong[$i]->MA_PHONG;
 //        echo '<br>';$i++;
 //    }
-    return View::make('Templates.phong.ListPhong_InListPhong');
+//    return View::make('Templates.phong.ListPhong_InLichPhong');
+
+    $res = DB::select("SELECT
+	NGUOIDUNG.TEN_ND AS TEN_ND,
+	PHANCONG.BUOIDAY AS BUOI_DAY,
+	PHANCONG.NGAYDAY AS NGAY_DAY,
+	PHANCONG.NGUOIDAY AS NGUOI_DAY,
+	CONGVIEC.NOIDUNG_CVIEC AS NOI_DUNG,
+	PHONG.TEN_PHONG AS TEN_PHONG
+FROM
+	PHANCONG
+INNER JOIN CONGVIEC ON PHANCONG.STT_CVIEC = CONGVIEC.STT_CVIEC
+INNER JOIN NGUOIDUNG ON PHANCONG.MA_ND = NGUOIDUNG.ID
+INNER JOIN PHONG ON PHANCONG.MA_PHONG = PHONG.MA_PHONG
+ORDER BY
+NGAY_DAY ASC,
+PHANCONG.MA_PHONG ASC
+");
+
+
+    var_dump($res);
 });
 
