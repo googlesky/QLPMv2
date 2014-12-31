@@ -57,6 +57,10 @@ Route::post('xoa_lich.app',function(){
     return View::make('action.phong.xoa_lich',Input::all());
 });
 
+Route::post('sua_phong.app',function(){
+    return View::make('action.phong.sua_phong',Input::all());
+});
+
 /*Code cho trang maytinh*/
 Route::get('maytinh.app', function () {
     return View::make('maytinh');

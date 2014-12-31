@@ -20,7 +20,20 @@
 
     </div>
     <script>
-        /*Update phòng script */
+        var updatephong = function(data){
+            $idphong = data.substring(2,data.length);
+            $maphong = $("#e1-"+$idphong).val();
+            $tenphong = $("#e2-"+$idphong).val();
+            $somay = $("#e3-"+$idphong).val();
+            $.ajax({
+                type: "POST",
+                url: "sua_phong.app",
+                data:{type:'updatephong',data:$idphong+";"+$maphong+";"+$tenphong+";"+$somay}
+            }).done(function(msg){
+                alert(msg);
+                location.reload();
+            })
+        }
     </script>
     <div class="panel-footer">
         <div class="row">
