@@ -1,10 +1,18 @@
+
 <div id="tab1" class="tab-pane fade in active">
+<?php
+$rMayTinh = DB::select('
+        SELECT MAYTINH.MA_MT AS MA_MT,
+               MAYTINH.TEN_MT AS TEN_MT,
+               
+    ');
+?>
                   <h2 class="text-center">Chi tiết thông tin máy:</h2>
                   <div style="height: 600px; overflow: auto; margin-bottom: 10px;">
                     <table class="table table-hover">
                         <thead>
                           <tr>
-                            <td><b>STT</b></td>
+                            <td><b>Mã máy</b></td>
                             <td><b>Tên máy</b></td>
                             <td><b>Chipset</b></td>
                             <td><b>Mainboard</b></td>
