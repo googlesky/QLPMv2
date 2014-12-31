@@ -1,3 +1,4 @@
+<!--
 <?php
             //Bắt đầu load dữ liệu theo từng phòng
                 if (isset($_GET['pid']) && filter_var($_GET['pid'], FILTER_VALIDATE_INT, array('min_range' => 1))) {
@@ -18,6 +19,8 @@
                     echo $messages;
                 }
 ?>
+
+-->
 <div class='alert alert-warning' style='margin-top: 10px;'>
     <h2 class='text-center'>Vui lòng chọn Phòng</h2>
 </div>
