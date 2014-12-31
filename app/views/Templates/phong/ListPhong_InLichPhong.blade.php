@@ -29,8 +29,10 @@ PHANCONG.MA_PHONG ASC
 
         if (strcasecmp($arr->BUOI_DAY, "Sáng") == 0) {
             $laber = "success";
-        } else {
+        } elseif(strcasecmp($arr->BUOI_DAY, "Chiều") == 0) {
             $laber = "warning";
+        }else {
+            $laber = "danger";
         }
 
         ?>
@@ -110,7 +112,7 @@ PHANCONG.MA_PHONG ASC
 
                                             $resPHONG = DB::table("PHONG")->lists("MA_PHONG");
 
-                                            $ArrBuoiDay = array("Sáng", "Chiều");
+                                            $ArrBuoiDay = array("Sáng", "Chiều","Tối");
                                             ?>
                                             {{ Form::label("Chọn Công Việc: " ) }}
                                             {{ Form::select("Công Việc",$CV,"",array("class" =>"selectpicker","id"=>"select_congviec")) }}
@@ -148,11 +150,11 @@ PHANCONG.MA_PHONG ASC
                             type: "POST",
                             url: "add_lich.app",
                             data: {
-                                congviec: $('.select_congviec').val(),
-                                phong: $('.seclect_phong').val(),
-                                ngayday: $('.calendar').val(),
-                                buoiday: $('.seclect_buoi').val(),
-                                nguoiday: $('.txtNguoiDay').val()
+                                congviec: $('#select_congviec option:selected').text(),
+                                phong: $('#seclect_phong option:selected').text(),
+                                ngayday: $('#calendar').val(),
+                                buoiday: $('#seclect_buoi option:selected').text(),
+                                nguoiday: $('#txtNguoiDay').val()
 
                             }
                         })

@@ -6,4 +6,5 @@
  * Time: 04:05
  */
 
-var_dump(Input::all());
+//var_dump(Input::all());
+
