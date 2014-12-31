@@ -53,6 +53,10 @@ Route::post('add_lich.app',function(){
     return View::make('action.phong.add_lich',Input::all());
 });
 
+Route::post('xoa_lich.app',function(){
+    return View::make('action.phong.xoa_lich',Input::all());
+});
+
 /*Code cho trang maytinh*/
 Route::get('maytinh.app', function () {
     return View::make('maytinh');

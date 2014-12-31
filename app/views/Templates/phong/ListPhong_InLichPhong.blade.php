@@ -79,12 +79,11 @@ PHANCONG.MA_PHONG ASC
                         $("input:checked").each(function ($key, $element) {
                             $.ajax({
                                 type: "POST",
-                                url: "delphong.php",
+                                url: "xoa_lich.app",
                                 data: {type: "dellich", lichno: $($element).attr("id")}
                             })
                                     .done(function (msg) {
-                                        alert("Đã xoá!!");
-                                        location.reload();
+                                        alert(msg);
                                     });
                         });
                     };
