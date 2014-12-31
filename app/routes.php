@@ -61,6 +61,10 @@ Route::post('sua_phong.app',function(){
     return View::make('action.phong.sua_phong',Input::all());
 });
 
+Route::post('them_phong.app',function(){
+    return View::make('action.phong.them_phong',Input::all());
+});
+
 /*Code cho trang maytinh*/
 Route::get('maytinh.app', function () {
     return View::make('maytinh');

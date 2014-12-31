@@ -57,17 +57,17 @@
                                     aria-hidden="true">&times;</button>
                             <h4 class="modal-title" id="myModalLabel">Thêm phòng</h4>
                         </div>
-                        <form action="addphong.php" method="POST">
+                        <form action="them_phong.app" method="POST">
                             <div class="modal-body">
                                 <div class="row">
                                     <div class="col-md-12">
 
-                                        <div class="form-group"><label for="">Tên phòng</label><input
+                                        <div class="form-group"><label for="">Mã Phòng</label><input
+                                                    name="maphong" type="text" class="form-control"
+                                                    placeholder="Nhập mã phòng"></div>
+                                        <div class="form-group"><label for="">Tên Phòng</label><input
                                                     name="tenphong" type="text" class="form-control"
                                                     placeholder="Nhập tên phòng"></div>
-                                        <div class="form-group"><label for="">Chú thích</label><input
-                                                    name="chuthich" type="text" class="form-control"
-                                                    placeholder="Nhập chú thích"></div>
                                         <div class="form-group"><label for="">Số lượng máy</label><input
                                                     name="somay" type="text" class="form-control"
                                                     placeholder="Nhập số máy trong 1 phòng"></div>
