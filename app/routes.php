@@ -49,8 +49,12 @@ Route::get('phong.app', function () {
     return View::make('phong');
 });
 
-Route::post('add_phong.app',function(){
-    return View::make('action.phong.add_lich',array(Input::all()));
+Route::post('add_lich.app',function(){
+    return View::make('action.phong.add_lich',Input::all());
+});
+
+Route::post('xoa_lich.app',function(){
+    return View::make('action.phong.xoa_lich',Input::all());
 });
 
 /*Code cho trang maytinh*/
@@ -71,22 +75,7 @@ Route::get('test.app', function () {
 //    }
 //    return View::make('Templates.phong.ListPhong_InLichPhong');
 
-    $res = DB::select("SELECT
-	NGUOIDUNG.TEN_ND AS TEN_ND,
-	PHANCONG.BUOIDAY AS BUOI_DAY,
-	PHANCONG.NGAYDAY AS NGAY_DAY,
-	PHANCONG.NGUOIDAY AS NGUOI_DAY,
-	CONGVIEC.NOIDUNG_CVIEC AS NOI_DUNG,
-	PHONG.TEN_PHONG AS TEN_PHONG
-FROM
-	PHANCONG
-INNER JOIN CONGVIEC ON PHANCONG.STT_CVIEC = CONGVIEC.STT_CVIEC
-INNER JOIN NGUOIDUNG ON PHANCONG.MA_ND = NGUOIDUNG.ID
-INNER JOIN PHONG ON PHANCONG.MA_PHONG = PHONG.MA_PHONG
-ORDER BY
-NGAY_DAY ASC,
-PHANCONG.MA_PHONG ASC
-");
+    $res = DB::table('PHANCONG')->max('ID_CV');
 
 
     var_dump($res);
